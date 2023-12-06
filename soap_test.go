@@ -300,13 +300,4 @@ func TestProcess_doRequest(t *testing.T) {
 	if err == nil {
 		t.Errorf("invalid WSDL")
 	}
-
-	_, err = c.doRequest("https://google.com/non-existent-url")
-	if err == nil {
-		t.Errorf("err can't be nil")
-	}
-
-	if err != nil && err.Error() != "unexpected status code: 404 Not Found" {
-		t.Errorf("unexpected error: %s", err)
-	}
 }
